@@ -1,0 +1,26 @@
+<!-- bitcoin.component.html -->
+<h3 class="text-center text-white bg-dark p-3">{{ bitcoinData.chartName }}</h3>
+<p class="text-danger">{{ errMessage }}</p>
+
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Currency Code</th>
+        <th>Symbol</th>
+        <th>Rate</th>
+        <th>Description</th>
+        <th>Rate Float</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let currencyCode of getBpiCurrencies()">
+        <td>{{ currencyCode }}</td>
+        <td>{{ getCurrencyData(currencyCode).symbol }}</td>
+        <td>{{ getCurrencyData(currencyCode).rate }}</td>
+        <td>{{ getCurrencyData(currencyCode).description }}</td>
+        <td>{{ getCurrencyData(currencyCode).rate_float }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
